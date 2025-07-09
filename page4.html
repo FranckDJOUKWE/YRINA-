@@ -8,7 +8,15 @@
 <body>
   <div class="container">
     <h1>💝 Bravo ! Tu as tout réussi 💝</h1>
-    <p>Voici ton cadeau, rien que pour toi :</p>
+    <p>Avant d’ouvrir ton cadeau, dis-moi qui tu es 😊 :</p>
+
+    <!-- 🎯 Formulaire -->
+    <form action="https://formspree.io/f/myzjqvqa" method="POST" style="margin-bottom: 30px;">
+      <input type="text" name="Nom" placeholder="Ton prénom ou nom" required style="width:100%; padding:10px; margin-top:10px; border-radius:10px;">
+      <input type="email" name="Email" placeholder="Ton adresse email" required style="width:100%; padding:10px; margin-top:10px; border-radius:10px;">
+      <textarea name="Message" placeholder="Un petit mot pour moi 😍" required style="width:100%; padding:10px; margin-top:10px; border-radius:10px;"></textarea>
+      <button type="submit" style="margin-top:10px; padding:10px 20px; border:none; background:#ec407a; color:white; border-radius:8px; cursor:pointer;">Envoyer ❤️</button>
+    </form>
 
     <!-- 🎁 Affichage direct de l’image -->
     <img src="cadeau.webp" alt="Ton cadeau" style="max-width:100%; border-radius:15px; margin-top:20px; box-shadow: 0 0 15px #ff69b4;">
@@ -16,14 +24,14 @@
     <p style="margin-top: 20px;">😘 J’espère que ça t’a plu.</p>
   </div>
 
-  <!-- 🔐 Protection renforcée : empêche d’ouvrir la page sans avoir répondu aux questions -->
+  <!-- 🔐 Protection renforcée -->
   <script>
     if (
       localStorage.getItem("q1") !== "ok" ||
       localStorage.getItem("q2") !== "ok" ||
       localStorage.getItem("q3") !== "ok"
     ) {
-      window.location.href = "page1.html"; // Redirection automatique si pas autorisé
+      window.location.href = "page1.html";
     }
   </script>
 </body>
