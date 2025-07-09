@@ -1,20 +1,100 @@
+/* --- Fond général romantique avec animation de coeurs --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe0f0, #ffe9fc, #fff0f6);
+  background-size: 400% 400%;
+  animation: backgroundShift 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* --- Container principal --- */
+.container {
+  background: #ffffffdd;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(255, 105, 180, 0.3);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Titres et textes --- */
+h1, h2, p {
+  color: #ff3e96;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* --- Image du cadeau --- */
+img {
+  max-width: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+}
+
+/* --- Formulaire --- */
 form input, form textarea {
   width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 12px;
+  border: 1px solid #ffc0cb;
   font-size: 16px;
+  background-color: #fff5f8;
 }
+
+form textarea {
+  resize: none;
+}
+
 form button {
-  background-color: #ff69b4;
+  background: #ff69b4;
   color: white;
+  padding: 12px 24px;
   border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
   font-size: 16px;
+  transition: background 0.3s ease;
 }
+
 form button:hover {
-  background-color: #ff1493;
+  background: #ff1493;
+}
+
+/* --- Animation douce du fond --- */
+@keyframes backgroundShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* --- Cœurs flottants (en bonus) --- */
+body::before {
+  content: "💖 💕 💗 💘 💝";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  font-size: 40px;
+  animation: floatHearts 5s infinite linear;
+  transform: translateX(-50%);
+  opacity: 0.2;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateX(-50%) translateY(0); opacity: 0.2; }
+  50% { transform: translateX(-50%) translateY(-20px); opacity: 0.4; }
+  100% { transform: translateX(-50%) translateY(0); opacity: 0.2; }
 }
