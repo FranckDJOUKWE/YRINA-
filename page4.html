@@ -34,5 +34,25 @@
       window.location.href = "page1.html";
     }
   </script>
+  <!-- 🔐 Protection renforcée -->
+<script>
+  // Bloquer si le parcours n’est pas fait
+  if (
+    localStorage.getItem("q1") !== "ok" ||
+    localStorage.getItem("q2") !== "ok" ||
+    localStorage.getItem("q3") !== "ok"
+  ) {
+    window.location.href = "page1.html";
+  }
+
+  // Supprime les accès une fois la page chargée pour empêcher l’actualisation
+  window.addEventListener("load", () => {
+    localStorage.removeItem("q1");
+    localStorage.removeItem("q2");
+    localStorage.removeItem("q3");
+  });
+</script>
+
 </body>
 </html>
+
