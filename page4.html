@@ -11,19 +11,28 @@
     <p>Voici ton cadeau, rien que pour toi :</p>
 
     <!-- 🎁 Affichage direct de l’image -->
-    <img src="cadeau.jpeg" alt="Ton cadeau" style="max-width:100%; border-radius:15px; margin-top:20px; box-shadow: 0 0 15px #ff69b4;">
+    <img src="cadeau.jpg" alt="Ton cadeau" style="max-width:100%; border-radius:15px; margin-top:20px; box-shadow: 0 0 15px #ff69b4;">
 
     <p style="margin-top: 20px;">😘 J’espère que ça t’a plu.</p>
+
+    <!-- 💌 Formulaire de message connecté à Formspree -->
+    <h2 style="margin-top:40px;">💌 Laisse-moi un petit message :</h2>
+    <form action="https://formspree.io/f/myzjqvqa" method="POST">
+      <input type="text" name="nom" placeholder="Ton prénom ou nom" required><br>
+      <input type="email" name="email" placeholder="Ton adresse email" required><br>
+      <textarea name="message" placeholder="Écris-moi un petit mot..." rows="4" required></textarea><br>
+      <button type="submit">✉️ Envoyer</button>
+    </form>
   </div>
 
-  <!-- 🔐 Protection renforcée : empêche d’ouvrir la page sans avoir répondu aux questions -->
+  <!-- 🔐 Sécurité : accès à page4.html seulement si q1, q2, q3 validés -->
   <script>
     if (
       localStorage.getItem("q1") !== "ok" ||
       localStorage.getItem("q2") !== "ok" ||
       localStorage.getItem("q3") !== "ok"
     ) {
-      window.location.href = "page1.html"; // Redirection automatique si pas autorisé
+      window.location.href = "page1.html";
     }
   </script>
 </body>
