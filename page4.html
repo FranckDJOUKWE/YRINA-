@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ton Cadeau 🎁</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>💝 Bravo ! Tu as tout réussi 💝</h1>
+    <p>Voici ton cadeau, rien que pour toi :</p>
+
+    <!-- 🎁 Affichage direct de l’image -->
+    <img src="cadeau.jpeg" alt="Ton cadeau" style="max-width:100%; border-radius:15px; margin-top:20px; box-shadow: 0 0 15px #ff69b4;">
+
+    <p style="margin-top: 20px;">😘 J’espère que ça t’a plu.</p>
+  </div>
+
+  <!-- 🔐 Protection renforcée : empêche d’ouvrir la page sans avoir répondu aux questions -->
+  <script>
+    if (
+      localStorage.getItem("q1") !== "ok" ||
+      localStorage.getItem("q2") !== "ok" ||
+      localStorage.getItem("q3") !== "ok"
+    ) {
+      window.location.href = "page1.html"; // Redirection automatique si pas autorisé
+    }
+  </script>
+</body>
+</html>
